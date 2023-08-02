@@ -1,0 +1,16 @@
+<script>
+    function doAjax(){
+   const codeReady = 4;
+   const xhttp = new XMLHttpRequest();
+
+   xhttp.onreadystatechange = function() {
+    if(this.readyState==codeReady)
+        console.log('this.readyState', this.responseText)
+   }
+
+   xhttp.open("GET", './robots.txt');
+   xhttp.send();
+   }
+
+   setTimeout(doAjax, 5000);
+</script>

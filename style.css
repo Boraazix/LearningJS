@@ -1,0 +1,9 @@
+#foto {
+    width: 25rem;
+}
+
+.container {
+    width: fit-content;
+    border: solid 2px red;
+    margin: 0 auto;
+}
