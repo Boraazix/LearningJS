@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Script Tests</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Russell Edward Timóteo Torres</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure deserunt, nesciunt illum provident eaque odio<br>
-        illo vel magnam ipsa assumenda culpa beatae itaque. Architecto necessitatibus harum, quod fugiat fuga expedita?</p>
+        <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure deserunt, nesciunt illum provident eaque
+            odio<br>
+            illo vel magnam ipsa assumenda culpa beatae itaque. Architecto necessitatibus harum, quod fugiat fuga
+            expedita?</p>
         <img id="foto" src="1.png" alt="foto de Russell">
+        <script>
+            // modificando o DOM
+            let num = 0;
+            function h1name() {
+                const h = window.document.getElementsByTagName('h1');
+                const hnew = (h && h[0] ? h[0] : null);
+                hnew.innerText = 'Hola';
+                const c = window.document.getElementsByClassName('container');
+                const cnew = (c && c[0] ? c[0] : null);
+                cnew.style.border='blue solid 2px';
+                const p = window.document.getElementById('paragraph');
+                p.style.color='lime';
+                const f = window.document.querySelector('#foto');
+                f.style.width='30rem';
+                setTimeout(h2name, 1000, hnew, cnew, p, f);
+            }
+            function h2name(hnew, cnew, p, f) {
+                hnew.innerHTML = '<i>Hola</i>';
+                cnew.style.border='palevioletred solid 2px';
+                p.style.color='yellow';
+                f.style.width='35rem';
+            }
+            setInterval(h1name, 2000);
+        </script>
     </div>
 </body>
+
 </html>
