@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Tests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="title"></h1>
+    <h2 id="h2"></h2>
+    <button id="btni">Incremento</button>
+    <button id="btnd">Decremento</button>
+
+    <script>
+        let num = 0;
+        const h1 = window.document.getElementById("title");
+        h1.innerText = "Russell";
+
+        const h2 = window.document.getElementById("h2");
+
+        const incremento = () => {
+            h2.innerText = num+=1;
+        }
+        const decremento = () => {
+            h2.innerText = num-=1;
+        }
+
+        const btni = window.document.getElementById('btni');
+        btni.addEventListener('click', incremento)
+
+        const btnd = window.document.getElementById('btnd');
+        btnd.addEventListener('click', decremento)
+    </script>
+</body>
+
+</html>
