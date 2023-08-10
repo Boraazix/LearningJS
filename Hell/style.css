@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+section.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #50021c; /*se não carregar o gradient*/
+    background: -webkit-linear-gradient(to right, #000000, #f11a61, #50021c); /*para webkit*/
+    background: linear-gradient(to right, #000000, #f11a61, #50021c);
+}
+section.main:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: transparent; /*se não carregar o gradient*/
+    background: -webkit-linear-gradient(to top, #50021c, transparent); /*para webkit*/
+    background: linear-gradient(to top, #50021c, transparent);
+}
+
+section.main #title {
+    font-size: 9rem;
+    letter-spacing: -6px;
+    position: relative;
+    top: -25px;
+}
+
+section .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+section .clouds img{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: clouds calc(3s * var(--i)) linear infinite;
+}
+
+@keyframes clouds {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    25% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(4);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(4);
+    }
+}
